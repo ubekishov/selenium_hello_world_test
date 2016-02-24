@@ -67,7 +67,7 @@ public class SeleniumMain {
 		WebDriver driver = new RemoteWebDriver(new URL("http://ec2-54-172-166-228.compute-1.amazonaws.com/wd/hub"), capability);
 
 		// And now use this to visit the app */
-		WebDriver driver = new FirefoxDriver()
+		WebDriver driver = new FirefoxDriver();
 		driver.get("http://" +DNS+":8080/hello-world-"+ appVersion + "/");
 
 
