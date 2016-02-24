@@ -16,6 +16,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 public class SeleniumMain {
@@ -62,12 +63,15 @@ public class SeleniumMain {
             // Or we could just do this: 
             // ex.printStackTrace();
         }
-		DesiredCapabilities capability = DesiredCapabilities.firefox();
+		/*DesiredCapabilities capability = DesiredCapabilities.firefox();
 		WebDriver driver = new RemoteWebDriver(new URL("http://ec2-54-172-166-228.compute-1.amazonaws.com/wd/hub"), capability);
-		
-		// And now use this to visit the app
+
+		// And now use this to visit the app */
+		WebDriver driver = new FirefoxDriver()
 		driver.get("http://" +DNS+":8080/hello-world-"+ appVersion + "/");
 
+
+				
         // Find the text input element by its name
         WebElement element = driver.findElement(By.tagName("h2"));
         String result = element.getText();
